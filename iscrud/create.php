@@ -1,14 +1,18 @@
 <?php 
 $name = $_POST["name"];
 $email = $_POST["email"];
-include_once "connection.php";
+$senha = $_POST["senha"];
 
-if (isset($_POST["name"]) && $name != "" && isset($_POST["email"]) && $email != "" ) {
+require_once "connection.php";
+
+if (isset($name) && $name != "" && $email != "" && $senha != "" ) {
     try{
-        $stmt = $connection->prepare("INSERT INTO iscrud (nome, email) VALUES (:nome, :email)");
+        $stmt = $connection->prepare("INSERT INTO usuario (nome, email, senha) VALUES (:nome, :email, :senha)");
         
         $stmt->bindValue(":nome", $name);
         $stmt->bindValue(":email", $email);
+        $stmt->bindValue(":senha", $senha);
+        $stmt->execute();
 
     }catch (PDOException $e) {
         echo "Erro na conexão:". $e->getmessage();

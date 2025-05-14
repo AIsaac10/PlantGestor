@@ -6,11 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="create.php" method="post">
-<label for="usuario">Usuário:</label>
-<input type="text" name="usuario" id= "usuario">
+    <form action="create.php" method="POST">
+<label for="name">Usuário:</label>
+<input type="text" name="name" id= "name">
+
 <label for="email">E-mail</label>
 <input type="email" name="email" id= "email">
+
+<label for="senha">Senha</label>
+<input type="password" name="senha" id= "senha">
 <input type="submit">
 
 
