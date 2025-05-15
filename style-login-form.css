@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, rgb(80, 148, 31), rgb(46, 66, 33));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+
+}
+.box {
+
+    background-color: rgb(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+    width: 20%;
+
+}
+fieldset {
+    border: 3px solid green
+}
+legend {
+    border: 1px solid green;
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+.inputbox {
+    position: relative;
+}
+.input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 2px;
+}
+#submit {
+    background-image: linear-gradient(to right, rgb(80, 148, 31), rgb(134, 192, 33));
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+#submit:hover{
+    background-image: linear-gradient(to right, rgb(104, 23, 23), rgb(235, 235, 235),);
+}
+#titulo {
+    position: absolute;
+    top: 10%;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+}
