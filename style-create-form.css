@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, rgb(31, 128, 148), rgb(33, 58, 66));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+
+}
+.box {
+
+    background-color: rgb(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+    width: 20%;
+
+}
+#fieldsetCreate {
+    border: 3px solid cornflowerblue;
+}
+#legendCreate {
+    border: 1px solid cornflowerblue;
+    background-color: cornflowerblue;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+.inputbox {
+    position: relative;
+}
+.input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 2px;
+}
+#submitCreate {
+    background-image: linear-gradient(to right, rgb(31, 56, 148), rgb(75, 33, 192));
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#titulo {
+    position: absolute;
+    top: 10%;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+}
