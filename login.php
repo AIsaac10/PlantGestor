@@ -11,7 +11,8 @@ $senha = trim($_POST["senha"] ?? '');
     }
 
     $stmt = $connection->prepare("SELECT * FROM usuario WHERE email = :email");
-    $stmt->execute([':email' => $email]);
+    $stmt->bindValue(':email', $email);
+    $stmt->execute();
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
 

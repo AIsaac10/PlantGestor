@@ -10,7 +10,7 @@
     <div id="login">
         <h1 id="titulo">PlantGestor</h1>
         
-        <form action="login.php" method="POST">
+        <form action="login.php" method="POST" id ="formLogin">
             <div class="inputBox">
                 <label for="name" class="labelInput">Usuário:</label>
                 <input type="text" name="name" id= "name" class="input" required>

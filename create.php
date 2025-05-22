@@ -7,19 +7,28 @@ $senha = trim($_POST["senha"]);
 $hashSenha = password_hash($senha, PASSWORD_DEFAULT);
 
 if (isset($_POST["name"]) && $name != "" && $email != "" && $senha != "" ) {
-    try{
-        $stmt = $connection->prepare("INSERT INTO usuario (nome, email, senha) VALUES (:nome, :email, :senha)");
-        
-        $stmt->bindValue(":nome", $name);
-        $stmt->bindValue(":email", $email);
-        $stmt->bindValue(":senha", $hashSenha);
-        $stmt->execute();
+    $stmt = $connection->prepare("SELECT * FROM usuario WHERE email = :email");
+    $stmt->bindValue(":email", $email);
+    $stmt->execute();
+    $user = $stmt->fetch();
+    if (!$user) {
+        try{
+            $stmt = $connection->prepare("INSERT INTO usuario (nome, email, senha) VALUES (:nome, :email, :senha)");
+            
+            $stmt->bindValue(":nome", $name);
+            $stmt->bindValue(":email", $email);
+            $stmt->bindValue(":senha", $hashSenha);
+            $stmt->execute();
 
-    }catch (PDOException $e) {
-        echo "Erro na conexão:". $e->getMessage();
+        }catch (PDOException $e) {
+            echo "Erro na conexão:". $e->getMessage();
+        }
+        header("Location: login-form.php");
+    }else {
+        echo "usuário já existe";
     }
-header("Location: login-form.php");
 }else {
     echo "algum campo está vazio";
 }
+
 ?>
