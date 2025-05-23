@@ -11,7 +11,7 @@
     <div class="box">
         <form action="create.php" method="POST">
             <fieldset id="fieldsetCreate">
-            <legend id="legendCreate"><b>Login</b></legend>
+            <legend id="legendCreate"><b>Cadastrar</b></legend>
                     <br><br>
             <div class="inputBox">
                 <label for="name" class="labelInput">Usuário:</label>

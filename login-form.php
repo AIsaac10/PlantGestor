@@ -23,15 +23,15 @@
                 <label for="senha" class="labelInput">Senha:</label>
                 <input type="password" name="senha" id= "senha" class="input" required>
             </div>
-            <input type="submit" id="submitLogin">
+            <input type="submit" id="submitLogin" value="Entrar">
         </form>
     </div>
 
     <div id="cadastrar">
-        <form action="create-form.php">
+        <form action="create-form.php" id="formCadastrar">
                     <h1>NOVO AQUI?</h1>
-        <p>crie uma conta e faça parte da nossa equipe</p>
-        <input type="submit" id="submitCadastrar">
+        <p id="pCadastro">crie uma conta e faça parte da nossa equipe</p>
+        <input type="submit" id="submitCadastrar" value="Criar">
 
         </form>
     </div>

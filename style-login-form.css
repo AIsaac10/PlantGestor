@@ -2,6 +2,7 @@ body {
     display: flex;
     margin: 0;
     height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #login{
@@ -40,13 +41,51 @@ body {
 .input {
     height: 25px;
     border-radius: 15px;
-    border: none;
-    background-color: aqua;
+    border: 1px solid black;
+    background-color: rgb(238, 238, 238);
 }
 
 #submitLogin {
     width: 175px;
     height: 40px;
-    border-radius: 15px;
+    border-radius: 30px;
     border: none;
+    background-image: linear-gradient(to right, rgb(19, 185, 75), rgb(18, 117, 56));
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+#submitLogin:hover {
+    background-image: linear-gradient(to right, rgb(19, 185, 132), rgb(18, 117, 110));
+}
+
+#titulo {
+    font-size: 50px;
+}
+
+#submitCadastrar {
+    width: 175px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    background-color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#submitCadastrar:hover {
+    background-color: rgb(216, 237, 255);
+}
+
+#formCadastrar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#pCadastro {
+    margin-top: -10px;
+    margin-bottom: 50px;
 }
