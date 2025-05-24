@@ -42,14 +42,13 @@ body {
     height: 25px;
     border-radius: 15px;
     border: 1px solid black;
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(255, 255, 255);
 }
 
 #submitLogin {
     width: 175px;
     height: 40px;
     border-radius: 30px;
-    border: none;
     background-image: linear-gradient(to right, rgb(19, 185, 75), rgb(18, 117, 56));
     font-size: 20px;
     cursor: pointer;
@@ -68,7 +67,6 @@ body {
     width: 175px;
     height: 40px;
     border-radius: 30px;
-    border: none;
     background-color: #fff;
     font-size: 20px;
     cursor: pointer;

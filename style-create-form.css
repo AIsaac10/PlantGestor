@@ -50,7 +50,6 @@ body {
 #submitCreate {
     background-image: linear-gradient(to right, rgb(19, 185, 75), rgb(18, 117, 56));
     width: 100%;
-    border: none;
     padding: 10px;
     border-radius: 10px;
     color: white;
