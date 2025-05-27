@@ -17,7 +17,7 @@ $senha = trim($_POST["senha"] ?? '');
 
     if (!$usuario) {
         $_SESSION["erro"] = "usuário não encontrado";
-        header("Location: login-form.php");
+        header("Location: index.php");
         exit;
     }
 

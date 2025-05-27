@@ -14,7 +14,7 @@
         <?php
             session_start();
             if (!isset($_SESSION['usuario_nome'])) {
-                header("Location: login-form.php");
+                header("Location: index.php");
                 exit;
             }
             echo "Bem-vindo " . $_SESSION['usuario_nome'];

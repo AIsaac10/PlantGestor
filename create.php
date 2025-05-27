@@ -1,5 +1,6 @@
 <?php 
 include "connection.php";
+session_start();
 
 $name = trim($_POST["name"]);
 $email = trim( $_POST["email"]);
@@ -23,12 +24,16 @@ if (isset($_POST["name"]) && $name != "" && $email != "" && $senha != "" ) {
         }catch (PDOException $e) {
             echo "Erro na conexão:". $e->getMessage();
         }
-        header("Location: login-form.php");
+        header("Location: index.php");
     }else {
-        echo "usuário já existe";
+        $_SESSION["erro"] = "usuário já existe";
+        header("Location: create-form.php");
+        exit;
     }
 }else {
-    echo "algum campo está vazio";
+        $_SESSION["erro2"] = "algum campo está vazio";
+        header("Location: create-form.php");
+        exit;
 }
 
 ?>
