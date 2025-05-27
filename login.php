@@ -2,30 +2,25 @@
 session_start();
 include "connection.php";
 
-$name = trim($_POST["name"] ?? '');
 $email = trim($_POST["email"] ?? '');
 $senha = trim($_POST["senha"] ?? '');
 
-    if (empty($email) || empty($senha) || empty($name)) {
+    if (empty($email) || empty($senha)) {
         echo "Preencha todos os campos.";
         exit;
     }
 
-    $stmt = $connection->prepare("SELECT * FROM usuario WHERE nome = :nome AND email = :email");
-    $stmt->bindValue(":nome", $name);
+    $stmt = $connection->prepare("SELECT * FROM usuario WHERE email = :email");
     $stmt->bindValue(":email", $email);
     $stmt->execute();
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$usuario) {
-        echo "usuário não encontrado";
+        $_SESSION["erro"] = "usuário não encontrado";
+        header("Location: login-form.php");
         exit;
     }
 
-    if ($name !== $usuario["nome"] ) {
-        echo "nome de usuário incorreto.";
-        exit;
-    }
 
     if (!password_verify($senha, $usuario["senha"])) {
     echo "Senha incorreta.";

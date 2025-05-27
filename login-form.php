@@ -11,10 +11,7 @@
         <h1 id="titulo">PlantGestor</h1>
         
         <form action="login.php" method="POST" id ="formLogin">
-            <div class="inputBox">
-                <label for="name" class="labelInput">Usuário:</label>
-                <input type="text" name="name" id= "name" class="input" required>
-            </div>
+            
             <div class="inputBox">
                 <label for="email" class="labelInput">E-mail:</label>
                 <input type="email" name="email" id= "email" class="input" required>
@@ -34,6 +31,14 @@
         <input type="submit" id="submitCadastrar" value="Criar">
 
         </form>
+        
+        <?php
+        session_start();
+
+        if (isset($_SESSION["erro"])) {
+            echo $_SESSION["erro"];
+        }
+        ?>
     </div>
 </body>
 </html>
