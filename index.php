@@ -30,6 +30,10 @@
                 echo $_SESSION["erro"];
                 session_destroy();
             }
+            if (isset($_SESSION["erro2"])) {
+                echo $_SESSION["erro2"];
+                session_destroy();
+            }
         ?>
     </div>
     <div id="cadastrar">
