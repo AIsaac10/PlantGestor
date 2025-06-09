@@ -26,7 +26,7 @@
     </header>
     <nav>
         <div class="criarElemento">
-            <a class="linkNav" href="">criar elemento</a>
+            <a class="linkNav" href="criar-elemento-colheita.php ">criar elemento</a>
         </div>
         <a class="linkNav" href="cultivo.php">cultivo</a>
         <a class="linkNav" href="colheita.php">colheita</a>
