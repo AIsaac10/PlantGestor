@@ -33,6 +33,6 @@
         <a class="linkNav" href="adubacao.php">adubação</a>
         <a class="linkNav" href="dashboard.php">dashboard</a>
     </nav>
-
+    </nav>
 </body>
 </html>
