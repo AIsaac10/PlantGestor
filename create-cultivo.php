@@ -8,11 +8,11 @@
         if (isset($_POST["cultura"]) && $cultura != "" && $dataCultura != "" && $quantCultura != "" ) {
 
             try{
-                $stmt = $connection->prepare("INSERT INTO cultivo (tipoCultura, dataPlantio, quantidadePlantio) VALUES (:tc, :dp, :qp)");
+                $stmt = $connection->prepare("INSERT INTO cultivo (tipoCultivo, dataCultivo, quantidadeCultivo) VALUES (:tc, :dc, :qc)");
                 
                 $stmt->bindValue(":tc", $cultura);
-                $stmt->bindValue(":dp", $dataCultura);
-                $stmt->bindValue(":qp", $quantCultura);
+                $stmt->bindValue(":dc", $dataCultura);
+                $stmt->bindValue(":qc", $quantCultura);
                 $stmt->execute();
 
             }catch (PDOException $e) {

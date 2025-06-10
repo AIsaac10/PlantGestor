@@ -10,10 +10,10 @@
     <label for="cultura">tipo de cultura</label>
     <input type="text" name="cultura" id="cultura" required>
 
-    <label for="dataCultura">data de plantio</label>
+    <label for="data">data de cultura</label>
     <input type="date" name="dataCultura" id="data" required>
 
-    <label for="quant">quantidade do plantio</label>
+    <label for="quant">quantidade do cultura</label>
     <input type="number" name="quantCultura" id="quant" required>
 
     <input type="submit">

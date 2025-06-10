@@ -2,8 +2,8 @@
     require "connection.php";
     $id = $_POST["id"];
     $tc = $_POST["tc"];
-    $dp = $_POST["dp"];
-    $qp = $_POST["qp"];
+    $dc = $_POST["dc"];
+    $qc = $_POST["qc"];
 ?>
 
 <!DOCTYPE html>
@@ -16,13 +16,13 @@
 <body>
     <form action="update-cultivo.php" method="POST">
         <label for="cultura">tipo de cultura</label>
-        <input type="text" name="tipoCultura" id="cultura" required value="<?php echo $tc ?>">
+        <input type="text" name="tipoCultivo" id="cultura" required value="<?php echo $tc ?>">
 
         <label for="data">data de plantio</label>
-        <input type="date" name="dataPlantio" id="data" required value="<?php echo $dp ?>">
+        <input type="date" name="dataCultivo" id="data" required value="<?php echo $dc ?>">
 
         <label for="quant">quantidade do plantio</label>
-        <input type="number" name="quantPlantio" id="quant" required value="<?php echo $qp ?>">
+        <input type="number" name="quantCultivo" id="quant" required value="<?php echo $qc ?>">
 
         <input type="hidden" name="idCultivo" value="<?php echo $id ?>">
 

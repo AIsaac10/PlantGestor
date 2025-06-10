@@ -68,23 +68,23 @@
                         while ($cultivo = $stmt->fetch(PDO::FETCH_OBJ)) { ?>
                         <tr>
                             <td>
-                                <?php echo $cultivo->IDCultivo ?>
+                                <?php echo $cultivo->idCultivo ?>
                             </td>
                             <td>
-                                <?php echo $cultivo->tipoCultura ?>
+                                <?php echo $cultivo->tipoCultivo ?>
                             </td>
                             <td>
-                                <?php echo $cultivo->dataPlantio ?>
+                                <?php echo $cultivo->dataCultivo ?>
                             </td>
                             <td>
-                                <?php echo $cultivo->quantidadePlantio ?>
+                                <?php echo $cultivo->quantidadeCultivo ?>
                             </td>
                             <td>
                                 <form action="update-cultivo-form.php" method="post">
-                                    <input type="hidden" name="id" value="<?php echo $cultivo->IDCultivo ?>">
-                                    <input type="hidden" name="tc" value="<?php echo $cultivo->tipoCultura ?>">
-                                    <input type="hidden" name="dp" value="<?php echo $cultivo->dataPlantio ?>">
-                                    <input type="hidden" name="qp" value="<?php echo $cultivo->quantidadePlantio ?>">
+                                    <input type="hidden" name="id" value="<?php echo $cultivo->idCultivo ?>">
+                                    <input type="hidden" name="tc" value="<?php echo $cultivo->tipoCultivo ?>">
+                                    <input type="hidden" name="dc" value="<?php echo $cultivo->dataCultivo ?>">
+                                    <input type="hidden" name="qc" value="<?php echo $cultivo->quantidadeCultivo ?>">
                                     <input type="submit" value="editar">
                                 </form>
                             </td>
