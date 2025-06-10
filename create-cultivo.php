@@ -1,4 +1,5 @@
 <?php 
+    include "connection.php";
     $cultura = trim($_POST["cultura"]);
     $dataCultura = trim( $_POST["dataCultura"]);
     $quantCultura = trim($_POST["quantCultura"]);
@@ -7,7 +8,7 @@
         if (isset($_POST["cultura"]) && $cultura != "" && $dataCultura != "" && $quantCultura != "" ) {
 
             try{
-                $stmt = $connection->prepare("INSERT INTO cultura (`tipo-cultura`, `data-plantio`, `quantidade-plantio`) VALUES (:tc, :dp, :qp)");
+                $stmt = $connection->prepare("INSERT INTO cultivo (tipoCultura, dataPlantio, quantidadePlantio) VALUES (:tc, :dp, :qp)");
                 
                 $stmt->bindValue(":tc", $cultura);
                 $stmt->bindValue(":dp", $dataCultura);
