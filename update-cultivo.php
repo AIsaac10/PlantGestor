@@ -1,5 +1,6 @@
 <?php 
     require "connection.php";
+    session_start();
 
     $id = $_POST["idCultivo"];
     $tc = $_POST["tipoCultura"];
@@ -12,4 +13,6 @@
     $stmt->bindValue(":dp", $dp);
     $stmt->bindValue(":qp", $qp);
     $stmt->execute();
+            header("Location: cultivo.php");
+
 ?>

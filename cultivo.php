@@ -80,7 +80,7 @@
                                 <?php echo $cultivo->quantidadePlantio ?>
                             </td>
                             <td>
-                                <form action="update-form.php" method="post">
+                                <form action="update-cultivo-form.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $cultivo->IDCultivo ?>">
                                     <input type="hidden" name="tc" value="<?php echo $cultivo->tipoCultura ?>">
                                     <input type="hidden" name="dp" value="<?php echo $cultivo->dataPlantio ?>">
