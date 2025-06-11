@@ -55,20 +55,26 @@
                         <th>
                             Quantidade de Plantio
                         </th>
+                        <th>
+                            Área de Cultura
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php 
                         include "connection.php";
+                        
+                        $ui = $_SESSION["usuario_id"];
 
-                        $stmt = $connection->prepare("SELECT * FROM cultivo");
+                        $stmt = $connection->prepare("SELECT * FROM cultivo WHERE usuario_id = :ui");
+                        $stmt->bindValue(":ui", $ui);
                         $stmt->execute();
                         
                         
                         while ($cultivo = $stmt->fetch(PDO::FETCH_OBJ)) { ?>
                         <tr>
                             <td>
-                                <?php echo $cultivo->idCultivo ?>
+                                <?php echo $cultivo->id ?>
                             </td>
                             <td>
                                 <?php echo $cultivo->tipoCultivo ?>
@@ -80,11 +86,15 @@
                                 <?php echo $cultivo->quantidadeCultivo ?>
                             </td>
                             <td>
+                                <?php echo $cultivo->areaCultivo ?>
+                            </td>
+                            <td>
                                 <form action="update-cultivo-form.php" method="post">
-                                    <input type="hidden" name="id" value="<?php echo $cultivo->idCultivo ?>">
+                                    <input type="hidden" name="id" value="<?php echo $cultivo->id ?>">
                                     <input type="hidden" name="tc" value="<?php echo $cultivo->tipoCultivo ?>">
                                     <input type="hidden" name="dc" value="<?php echo $cultivo->dataCultivo ?>">
                                     <input type="hidden" name="qc" value="<?php echo $cultivo->quantidadeCultivo ?>">
+                                    <input type="hidden" name="ac" value="<?php echo $cultivo->areaCultivo ?>">
                                     <input type="submit" value="editar">
                                 </form>
                             </td>

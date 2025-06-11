@@ -4,6 +4,7 @@
     $tc = $_POST["tc"];
     $dc = $_POST["dc"];
     $qc = $_POST["qc"];
+    $ac = $_POST["ac"];
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +24,9 @@
 
         <label for="quant">quantidade do plantio</label>
         <input type="number" name="quantCultivo" id="quant" required value="<?php echo $qc ?>">
+
+                <label for="area">area do plantio</label>
+        <input type="number" name="areaCultivo" id="area" required value="<?php echo $ac ?>">
 
         <input type="hidden" name="idCultivo" value="<?php echo $id ?>">
 
