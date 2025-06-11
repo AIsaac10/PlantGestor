@@ -1,18 +1,24 @@
 <?php 
     include "connection.php";
+
+    session_start();
     $cultura = trim($_POST["cultura"]);
     $dataCultura = trim( $_POST["dataCultura"]);
     $quantCultura = trim($_POST["quantCultura"]);
-    var_dump($_POST);
+    $areaCultura = trim($_POST["areaCultura"]);
+    $idUser = $_SESSION["usuario_id"];
 
-        if (isset($_POST["cultura"]) && $cultura != "" && $dataCultura != "" && $quantCultura != "" ) {
+
+        if (isset($_POST["cultura"]) && $cultura != "" && $dataCultura != "" && $quantCultura != "" && $areaCultura != "" ) {
 
             try{
-                $stmt = $connection->prepare("INSERT INTO cultivo (tipoCultivo, dataCultivo, quantidadeCultivo) VALUES (:tc, :dc, :qc)");
+                $stmt = $connection->prepare("INSERT INTO cultivo (tipoCultivo, dataCultivo, quantidadeCultivo, areaCultivo, usuario_id) VALUES (:tc, :dc, :qc, :ac, :iu)");
                 
                 $stmt->bindValue(":tc", $cultura);
                 $stmt->bindValue(":dc", $dataCultura);
                 $stmt->bindValue(":qc", $quantCultura);
+                $stmt->bindValue(":ac", $quantCultura);
+                $stmt->bindValue(":iu", $idUser);
                 $stmt->execute();
 
             }catch (PDOException $e) {

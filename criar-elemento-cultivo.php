@@ -13,8 +13,11 @@
     <label for="data">data de cultura</label>
     <input type="date" name="dataCultura" id="data" required>
 
-    <label for="quant">quantidade do cultura</label>
+    <label for="quant">quantidade de cultura</label>
     <input type="number" name="quantCultura" id="quant" required>
+
+    <label for="area">área de cultura</label>
+    <input type="number" name="areaCultura" id="area" required>
 
     <input type="submit">
 
