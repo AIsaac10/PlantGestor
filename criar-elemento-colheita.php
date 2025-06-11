@@ -7,6 +7,9 @@
 </head>
 <body>
 <form action="create-colheita.php" method="POST">
+    <label for="id">id do cultivo</label>
+    <input type="int" name="idCultivo" id="id" required>
+
     <label for="data">data de colheita</label>
     <input type="date" name="dataColheita" id="data" required>
 

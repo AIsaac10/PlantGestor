@@ -1,6 +1,5 @@
 <?php 
     include "connection.php";
-
     session_start();
     $cultura = trim($_POST["cultura"]);
     $dataCultura = trim( $_POST["dataCultura"]);

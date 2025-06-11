@@ -45,17 +45,15 @@
                             ID do Cultivo
                         </th>
                         <th>
-                            Tipo de Cultura
+                            Data da Colheita
                         </th>
                         <th>
-                            Data do Plantio
+                            Quantidade da Colheita
                         </th>
                         <th>
-                            Quantidade de Plantio
+                            Maneira de Colheita
                         </th>
-                        <th>
-                            Área de Cultura
-                        </th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -64,28 +62,26 @@
                         
                         $ui = $_SESSION["usuario_id"];
 
-                        $stmt = $connection->prepare("SELECT * FROM cultivo WHERE usuario_id = :ui");
-                        $stmt->bindValue(":ui", $ui);
+                        $stmt = $connection->prepare("SELECT * FROM colheita WHERE cultivo_id = :ci");
+                        $stmt->bindValue(":ci", );
                         $stmt->execute();
                         
                         
-                        while ($cultivo = $stmt->fetch(PDO::FETCH_OBJ)) { ?>
+                        while ($colheita = $stmt->fetch(PDO::FETCH_OBJ)) { ?>
                         <tr>
                             <td>
-                                <?php echo $cultivo->id ?>
+                                <?php echo $colheita->cultivo_id ?>
                             </td>
                             <td>
-                                <?php echo $cultivo->tipoCultivo ?>
+                                <?php echo $colheita->dataColheita ?>
                             </td>
                             <td>
-                                <?php echo $cultivo->dataCultivo ?>
+                                <?php echo $colheita->quantidadeColheita ?>
                             </td>
                             <td>
-                                <?php echo $cultivo->quantidadeCultivo ?>
+                                <?php echo $colheita->maneiraColheita ?>
                             </td>
-                            <td>
-                                <?php echo $cultivo->areaCultivo ?>
-                            </td>
+
                             <td>
                                 <form action="update-cultivo-form.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $cultivo->id ?>">

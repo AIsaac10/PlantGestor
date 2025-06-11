@@ -2,27 +2,27 @@
     include "connection.php";
 
     session_start();
+    $idCultivo = trim($_POST["idCultivo"]);
     $dataColheita = trim($_POST["dataColheita"]);
     $quantColheita = trim( $_POST["quantColheita"]);
     $maneiraColheita = trim($_POST["maneiraColheita"]);
-    $idUser = $_SESSION["usuario_id"];
 
 
-        if (isset($_POST["cultura"]) && $cultura != "" && $dataCultura != "" && $quantCultura != "" && $areaCultura != "" ) {
+        if (isset($_POST["dataColheita"]) && $dataColheita != "" && $quantColheita != "" && $maneiraColheita != "") {
 
             try{
-                $stmt = $connection->prepare("INSERT INTO colheita (dataColheita, quantColheita, quantidadeCultivo, areaCultivo, usuario_id) VALUES (:tc, :dc, :qc, :ac, :iu)");
+                $stmt = $connection->prepare("INSERT INTO colheita (dataColheita, quantidadeColheita, maneiraColheita, cultivo_id ) VALUES (:dc, :qc, :mc, :ci)");
                 
-                $stmt->bindValue(":tc", $dataColheita);
-                $stmt->bindValue(":dc", $quantColheita);
-                $stmt->bindValue(":qc", $maneiraColheita);
-                $stmt->bindValue(":iu", $idUser);
+                $stmt->bindValue(":dc", $dataColheita);
+                $stmt->bindValue(":qc", $quantColheita);
+                $stmt->bindValue(":mc", $maneiraColheita);
+                $stmt->bindValue(":ci", $idCultivo);
                 $stmt->execute();
 
             }catch (PDOException $e) {
                 echo "Erro na conexão:". $e->getMessage();
             }
-            header("Location: cultivo.php");
+            header("Location: colheita.php");
         }
 
 
