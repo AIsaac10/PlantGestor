@@ -15,7 +15,6 @@
     $stmt->bindValue(":qc", $qc);
     $stmt->bindValue(":ac", $ac);
     $stmt->bindValue(":ui", $ui);
-    
     $stmt->execute();
     header("Location: cultivo.php");
 

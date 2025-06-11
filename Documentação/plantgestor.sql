@@ -21,4 +21,16 @@ CREATE TABLE cultivo (
     FOREIGN KEY (usuario_id) REFERENCES usuario(id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
-        );
+);
+
+
+CREATE TABLE colheita (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    dataColheita DATE NOT NULL,
+    quantidadeColheita INT NOT NULL,
+    maneiraColheita VARCHAR(100) NOT NULL,
+    cultivo_id INT,
+    FOREIGN KEY (cultivo_id) REFERENCES cultivo(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);

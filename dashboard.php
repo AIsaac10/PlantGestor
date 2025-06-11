@@ -30,7 +30,6 @@
         </div>
         <a class="linkNav" href="cultivo.php">cultivo</a>
         <a class="linkNav" href="colheita.php">colheita</a>
-        <a class="linkNav" href="adubacao.php">adubação</a>
         <a class="linkNav" href="dashboard.php">dashboard</a>
     </nav>
 </body>

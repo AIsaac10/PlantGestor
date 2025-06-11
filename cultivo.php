@@ -30,7 +30,6 @@
         </div>
         <a class="linkNav" href="cultivo.php">cultivo</a>
         <a class="linkNav" href="colheita.php">colheita</a>
-        <a class="linkNav" href="adubacao.php">adubação</a>
         <a class="linkNav" href="dashboard.php">dashboard</a>
     </nav>
     <div class="h1">
@@ -100,7 +99,9 @@
                             </td>
                             <td>
                                 <form action="delete.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $cultivo->id ?>">
                                     <input type="submit" value="excluir">
+                                
                                 </form>
                             </td>
                         </tr>
