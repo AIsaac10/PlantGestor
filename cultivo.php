@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlantGestor</title>
-    <link rel="stylesheet" href="style-dashboard.css">
+    <link rel="stylesheet" href="css/style-dashboard.css">
 </head>
 <body>
     <header class="headerSecurity">
@@ -98,10 +98,9 @@
                                 </form>
                             </td>
                             <td>
-                                <form action="delete.php" method="post">
+                                <form action="delete-cultivo.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $cultivo->id ?>">
                                     <input type="submit" value="excluir">
-                                
                                 </form>
                             </td>
                         </tr>

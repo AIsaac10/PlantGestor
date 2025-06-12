@@ -1,3 +1,12 @@
+<?php 
+    require "connection.php";
+    $id = $_POST["id"];
+    $ic = $_POST["ci"];
+    $tc = $_POST["tc"];
+    $dc = $_POST["dc"];
+    $qc = $_POST["qc"];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,7 +15,7 @@
     <title>PlantGestor</title>
 </head>
 <body>
-<form action="create-colheita.php" method="POST">
+    <form action="update-colheita.php" method="POST">
     <label for="id">id do cultivo</label>
     <input type="int" name="idCultivo" id="id" required>
 
@@ -19,8 +28,10 @@
     <label for="maneira">maneira que foi colhida</label>
     <input type="text" name="maneiraColheita" id="maneira" required>
 
-    <input type="submit">
+    <input type="hidden" name="idColheita" value="<?php echo $id ?>">
 
-</form>
+    <input type="submit">
+   
+    </form>
 </body>
 </html>

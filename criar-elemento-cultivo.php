@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PlantGestor</title>
 </head>
 <body>
 <form action="create-cultivo.php" method="POST">
     <label for="cultura">tipo de cultura</label>
-    <input type="text" name="cultura" id="cultura" required>
+    <input type="text" name="tipoCultura" id="cultura" required>
 
     <label for="data">data de cultura</label>
     <input type="date" name="dataCultura" id="data" required>

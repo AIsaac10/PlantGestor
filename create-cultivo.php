@@ -1,19 +1,19 @@
 <?php 
     include "connection.php";
     session_start();
-    $cultura = trim($_POST["cultura"]);
+    $tipoCultura = trim($_POST["tipoCultura"]);
     $dataCultura = trim( $_POST["dataCultura"]);
     $quantCultura = trim($_POST["quantCultura"]);
     $areaCultura = trim($_POST["areaCultura"]);
     $idUser = $_SESSION["usuario_id"];
 
 
-        if (isset($_POST["cultura"]) && $cultura != "" && $dataCultura != "" && $quantCultura != "" && $areaCultura != "" ) {
+        if (isset($_POST["tipoCultura"]) && $tipoCultura != "" && $dataCultura != "" && $quantCultura != "" && $areaCultura != "" ) {
 
             try{
                 $stmt = $connection->prepare("INSERT INTO cultivo (tipoCultivo, dataCultivo, quantidadeCultivo, areaCultivo, usuario_id) VALUES (:tc, :dc, :qc, :ac, :iu)");
                 
-                $stmt->bindValue(":tc", $cultura);
+                $stmt->bindValue(":tc", $tipoCultura);
                 $stmt->bindValue(":dc", $dataCultura);
                 $stmt->bindValue(":qc", $quantCultura);
                 $stmt->bindValue(":ac", $quantCultura);

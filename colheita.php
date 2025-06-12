@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlantGestor</title>
-    <link rel="stylesheet" href="style-dashboard.css">
+    <link rel="stylesheet" href="css/style-dashboard.css">
 </head>
 <body>
     <header class="headerSecurity">
@@ -62,8 +62,8 @@
                         
                         $ui = $_SESSION["usuario_id"];
 
-                        $stmt = $connection->prepare("SELECT * FROM colheita WHERE cultivo_id = :ci");
-                        $stmt->bindValue(":ci", );
+                        $stmt = $connection->prepare("SELECT * FROM colheita WHERE usuario_id = :ui");
+                        $stmt->bindValue(":ui", $ui);
                         $stmt->execute();
                         
                         
@@ -82,21 +82,21 @@
                                 <?php echo $colheita->maneiraColheita ?>
                             </td>
 
+
                             <td>
-                                <form action="update-cultivo-form.php" method="post">
-                                    <input type="hidden" name="id" value="<?php echo $cultivo->id ?>">
-                                    <input type="hidden" name="tc" value="<?php echo $cultivo->tipoCultivo ?>">
-                                    <input type="hidden" name="dc" value="<?php echo $cultivo->dataCultivo ?>">
-                                    <input type="hidden" name="qc" value="<?php echo $cultivo->quantidadeCultivo ?>">
-                                    <input type="hidden" name="ac" value="<?php echo $cultivo->areaCultivo ?>">
+                                <form action="update-colheita-form.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $colheita->id ?>">
+                                    <input type="hidden" name="ci" value="<?php echo $colheita->cultivo_id ?>">
+                                    <input type="hidden" name="tc" value="<?php echo $colheita->tipoCultivo ?>">
+                                    <input type="hidden" name="dc" value="<?php echo $colheita->dataCultivo ?>">
+                                    <input type="hidden" name="qc" value="<?php echo $colheita->quantidadeCultivo ?>">
                                     <input type="submit" value="editar">
                                 </form>
                             </td>
-                            <td>
-                                <form action="delete.php" method="post">
-                                    <input type="hidden" name="id" value="<?php echo $cultivo->id ?>">
+                           <td>
+                                <form action="delete-colheita.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $colheita->id ?>">
                                     <input type="submit" value="excluir">
-                                
                                 </form>
                             </td>
                         </tr>
