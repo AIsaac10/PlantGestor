@@ -15,6 +15,7 @@ CREATE TABLE cultivo (
     dataCultivo DATE NOT NULL,
     quantidadeCultivo INT NOT NULL,
     areaCultivo DECIMAL(10,2) NOT NULL,
+    maneiraCultivo VARCHAR(100) NOT NULL,
     usuario_id INT NOT NULL,
     FOREIGN KEY (usuario_id) REFERENCES usuario(id)
         ON DELETE CASCADE

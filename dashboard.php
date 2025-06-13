@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlantGestor</title>
-    <link rel="stylesheet" href="css/style-dashboard.css">
+    <link rel="stylesheet" href="css/style-main.css">
 </head>
 <body>
     <header class="headerSecurity">

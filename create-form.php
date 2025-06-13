@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="css/style-create-form.css">
 </head>
 <body>
-    <h1 id="titulo">PlantGestor</h1>
+    <h1 class="titulo">PlantGestor</h1>
+    
     <div class="box">
         <form action="create.php" method="POST">
-            <fieldset id="fieldsetCreate">
-            <legend id="legendCreate"><b>Cadastrar</b></legend>
+            <fieldset class="fieldsetCreate">
+            <legend class="legendCreate"><b>Cadastrar</b></legend>
                     <br><br>
             <div class="inputBox">
                 <label for="name" class="labelInput">Usuário:</label>
@@ -28,7 +29,7 @@
                 <input type="password" name="senha" id= "senha" class="input" required>
             </div>
         <br><br>
-            <input type="submit" id="submitCreate">
+            <input type="submit" class="submitCreate">
             </fieldset>
         </form>
         </div>

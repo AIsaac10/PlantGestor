@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlantGestor</title>
-    <link rel="stylesheet" href="css/style-dashboard.css">
+    <link rel="stylesheet" href="css/style-main.css">
 </head>
 <body>
     <header class="headerSecurity">
@@ -57,6 +57,10 @@
                         <th>
                             Área de Cultura
                         </th>
+                        <th>
+                            Maneira de Plantio da Cultura
+                        </th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -88,12 +92,17 @@
                                 <?php echo $cultivo->areaCultivo ?>
                             </td>
                             <td>
+                                <?php echo $cultivo->maneiraCultivo ?>
+                            </td>
+
+                            <td>
                                 <form action="update-cultivo-form.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $cultivo->id ?>">
                                     <input type="hidden" name="tc" value="<?php echo $cultivo->tipoCultivo ?>">
                                     <input type="hidden" name="dc" value="<?php echo $cultivo->dataCultivo ?>">
                                     <input type="hidden" name="qc" value="<?php echo $cultivo->quantidadeCultivo ?>">
                                     <input type="hidden" name="ac" value="<?php echo $cultivo->areaCultivo ?>">
+                                    <input type="hidden" name="mc" value="<?php echo $cultivo->maneiraCultivo ?>">
                                     <input type="submit" value="editar">
                                 </form>
                             </td>
