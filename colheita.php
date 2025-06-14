@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlantGestor</title>
-    <link rel="stylesheet" href="css/style-main.css">
+    <link rel="stylesheet" href="css/style-page.css">
 </head>
 <body>
     <header class="headerSecurity">
@@ -33,13 +33,13 @@
         <a class="linkNav" href="dashboard.php">dashboard</a>
     </nav>
         <div class="h1">
-        <h1>
+        <h1 class="h1Tipo">
             colheita
         </h1>
     <main>
 
-            <table border = 1px>
-                <thead>
+            <table>
+                <thead >
                     <tr>
                         <th>
                             ID do Cultivo
@@ -53,6 +53,12 @@
                         <th>
                             Maneira de Colheita
                         </th>
+                        <th>
+                            Editar
+                        </th>
+                        <th>
+                            Excluir
+                        </th>
 
                     </tr>
                 </thead>
@@ -65,9 +71,8 @@
                         $stmt = $connection->prepare("SELECT * FROM colheita WHERE usuario_id = :ui");
                         $stmt->bindValue(":ui", $ui);
                         $stmt->execute();
-                        
-                        
-                        while ($colheita = $stmt->fetch(PDO::FETCH_OBJ)) { ?>
+                        while ($colheita = $stmt->fetch(PDO::FETCH_OBJ)) {
+                    ?>
                         <tr>
                             <td>
                                 <?php echo $colheita->cultivo_id ?>
@@ -85,18 +90,17 @@
 
                             <td>
                                 <form action="update-colheita-form.php" method="post">
-                                    <input type="hidden" name="id" value="<?php echo $colheita->id ?>">
                                     <input type="hidden" name="ci" value="<?php echo $colheita->cultivo_id ?>">
-                                    <input type="hidden" name="tc" value="<?php echo $colheita->tipoCultivo ?>">
-                                    <input type="hidden" name="dc" value="<?php echo $colheita->dataCultivo ?>">
-                                    <input type="hidden" name="qc" value="<?php echo $colheita->quantidadeCultivo ?>">
-                                    <input type="submit" value="editar">
+                                    <input type="hidden" name="dc" value="<?php echo $colheita->dataColheita ?>">
+                                    <input type="hidden" name="qc" value="<?php echo $colheita->quantidadeColheita ?>">
+                                    <input type="hidden" name="mc" value="<?php echo $colheita->maneiraColheita ?>">
+                                    <input type="submit" value="editar" class="submitTableED">
                                 </form>
                             </td>
                            <td>
                                 <form action="delete-colheita.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $colheita->id ?>">
-                                    <input type="submit" value="excluir">
+                                    <input type="submit" value="excluir" class="submitTableEX">
                                 </form>
                             </td>
                         </tr>

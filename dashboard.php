@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlantGestor</title>
-    <link rel="stylesheet" href="css/style-main.css">
+    <link rel="stylesheet" href="css/style-page.css">
 </head>
 <body>
     <header class="headerSecurity">
@@ -32,5 +32,8 @@
         <a class="linkNav" href="colheita.php">colheita</a>
         <a class="linkNav" href="dashboard.php">dashboard</a>
     </nav>
+    <h1 class="h1Tipo">
+        dashboard
+    </h1>
 </body>
 </html>

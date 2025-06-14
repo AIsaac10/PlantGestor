@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlantGestor</title>
-    <link rel="stylesheet" href="css/style-main.css">
+    <link rel="stylesheet" href="css/style-page.css">
 </head>
 <body>
     <header class="headerSecurity">
@@ -33,13 +33,13 @@
         <a class="linkNav" href="dashboard.php">dashboard</a>
     </nav>
     <div class="h1">
-        <h1>
+        <h1 class="h1Tipo">
             cultivo
         </h1>
     </div>
     <main>
 
-            <table border = 1px>
+            <table>
                 <thead>
                     <tr>
                         <th>
@@ -60,7 +60,12 @@
                         <th>
                             Maneira de Plantio da Cultura
                         </th>
-
+                        <th>
+                            Editar
+                        </th>
+                        <th>
+                            Excluir
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -103,13 +108,13 @@
                                     <input type="hidden" name="qc" value="<?php echo $cultivo->quantidadeCultivo ?>">
                                     <input type="hidden" name="ac" value="<?php echo $cultivo->areaCultivo ?>">
                                     <input type="hidden" name="mc" value="<?php echo $cultivo->maneiraCultivo ?>">
-                                    <input type="submit" value="editar">
+                                    <input type="submit" value="editar" class="submitTableED">
                                 </form>
                             </td>
                             <td>
                                 <form action="delete-cultivo.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $cultivo->id ?>">
-                                    <input type="submit" value="excluir">
+                                    <input type="submit" value="excluir" class="submitTableEX">
                                 </form>
                             </td>
                         </tr>
