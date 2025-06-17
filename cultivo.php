@@ -61,10 +61,10 @@
                             Maneira de Plantio da Cultura
                         </th>
                         <th>
-                            Editar
+                            
                         </th>
                         <th>
-                            Excluir
+                            
                         </th>
                     </tr>
                 </thead>

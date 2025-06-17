@@ -54,10 +54,10 @@
                             Maneira de Colheita
                         </th>
                         <th>
-                            Editar
+                            
                         </th>
                         <th>
-                            Excluir
+                            
                         </th>
 
                     </tr>

@@ -9,7 +9,11 @@
 
 
         if (isset($_POST["dataColheita"]) && $dataColheita != "" && $quantColheita != "" && $maneiraColheita != "") {
-
+        $stmt = $connection->prepare("SELECT * FROM cultivo WHERE id = :id");
+        $stmt->bindValue(":id", $idCultivo);
+        $stmt->execute();
+        $ic = $stmt->fetch();
+        if ($ic) {
             try{
                 $stmt = $connection->prepare("INSERT INTO colheita (dataColheita, quantidadeColheita, maneiraColheita, cultivo_id, usuario_id ) VALUES (:dc, :qc, :mc, :ci, :ui)");
                 
@@ -24,7 +28,14 @@
                 echo "Erro na conexão:". $e->getMessage();
             }
             header("Location: colheita.php");
+            exit;
+        }else {
+            $_SESSION["erroId"] = "O id do cultivo não existe";
+            header("Location: criar-elemento-colheita.php");
+            exit;
+
         }
+    }
 
 
 
