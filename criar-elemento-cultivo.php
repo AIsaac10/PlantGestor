@@ -6,8 +6,11 @@
     <title>PlantGestor</title>
     <link rel="stylesheet" href="css/style-create-form.css">
 </head>
-    <body>
-        <div class="box">
+<body>
+    <?php
+        require "lock.php";
+    ?>
+    <div class="box">
         <form action="create-cultivo.php" method="POST">
             <fieldset class="fieldsetCreate">
             <legend class="legendCreate">

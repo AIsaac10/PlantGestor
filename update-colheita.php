@@ -1,6 +1,6 @@
-<?php 
+<?php
+    require "lock.php";
     require "connection.php";
-    session_start();
     $ui = $_SESSION["usuario_id"];
     $id = $_POST["idColheita"];
     $ic = $_POST["idCultivo"];

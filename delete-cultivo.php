@@ -1,6 +1,6 @@
 <?php 
+    require "lock.php";
     require "connection.php";
-    session_start();
     $id = $_POST["id"];
 
     $stmt = $connection->prepare("DELETE FROM cultivo WHERE id = :id");

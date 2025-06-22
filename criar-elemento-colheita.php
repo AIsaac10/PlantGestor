@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/style-create-form.css">
 </head>
 <body>
+    <?php
+        require "lock.php";
+    ?>
     <div class="box">
         <form action="create-colheita.php" method="POST">
             <fieldset class="fieldsetCreate">
@@ -37,7 +40,6 @@
                 <input type="submit" class="submitCreate">
 
                 <?php 
-                    session_start();
 
                     if (isset($_SESSION["erroId"])) {
                         echo $_SESSION["erroId"];

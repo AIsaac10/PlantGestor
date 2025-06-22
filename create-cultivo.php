@@ -1,4 +1,5 @@
 <?php 
+    require "lock.php";
     include "connection.php";
     session_start();
     $tipoCultura = trim($_POST["tipoCultura"]);

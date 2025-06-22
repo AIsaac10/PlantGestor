@@ -1,4 +1,5 @@
-<?php 
+<?php
+    require "lock.php";
     include "connection.php";
     session_start();
     $idCultivo = trim($_POST["idCultivo"]);

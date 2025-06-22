@@ -46,6 +46,7 @@
                 session_destroy();
             }
         ?>
+        <a class="aVoltar" href="index.php">voltar para login</a>
 
 </body>
 </html>

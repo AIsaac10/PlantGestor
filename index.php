@@ -28,11 +28,11 @@
 
             if (isset($_SESSION["erro"])) {
                 echo $_SESSION["erro"];
-                session_destroy();
+                session_unset();
             }
             if (isset($_SESSION["erro2"])) {
                 echo $_SESSION["erro2"];
-                session_destroy();
+                session_unset();
             }
         ?>
     </div>

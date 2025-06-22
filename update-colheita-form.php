@@ -1,4 +1,5 @@
 <?php 
+    require "lock.php";
     require "connection.php";
     $ic = $_POST["ci"] ?? "";
     $dc = $_POST["dc"] ?? "";
