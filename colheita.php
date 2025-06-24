@@ -26,15 +26,15 @@
     </header>
     <nav>
         <div class="criarElemento">
-            <a class="linkNav" href="criar-elemento-colheita.php ">criar elemento</a>
+            <a class="linkNav" href=" "></a>
         </div>
-        <a class="linkNav" href="cultivo.php">cultivo</a>
-        <a class="linkNav" href="colheita.php">colheita</a>
-        <a class="linkNav" href="dashboard.php">dashboard</a>
+        <a class="linkNav" href="cultivo.php">Cultivo</a>
+        <a class="linkNav" href="colheita.php">Colheita</a>
+        <a class="linkNav" href="dashboard.php">Dashboard</a>
     </nav>
         <div class="h1">
         <h1 class="h1Tipo">
-            colheita
+            Colheita
         </h1>
     <main>
 <?php 
@@ -51,7 +51,6 @@
     <table>
         <thead>
             <tr>
-                <th>ID do Cultivo</th>
                 <th>Data da Colheita</th>
                 <th>Quantidade da Colheita</th>
                 <th>Maneira de Colheita</th>
@@ -64,7 +63,7 @@
                 while ($colheita = $stmt->fetch(PDO::FETCH_OBJ)) {
             ?>
             <tr>
-                <td><?php echo $colheita->cultivo_id ?></td>
+
                 <td><?php echo $colheita->dataColheita ?></td>
                 <td><?php echo $colheita->quantidadeColheita ?></td>
                 <td><?php echo $colheita->maneiraColheita ?></td>
@@ -74,13 +73,13 @@
                         <input type="hidden" name="dc" value="<?php echo $colheita->dataColheita ?>">
                         <input type="hidden" name="qc" value="<?php echo $colheita->quantidadeColheita ?>">
                         <input type="hidden" name="mc" value="<?php echo $colheita->maneiraColheita ?>">
-                        <input type="submit" value="editar" class="submitTableED">
+                        <input type="submit" value="Editar" class="submitTableED">
                     </form>
                 </td>
                 <td>
                     <form action="delete-colheita.php" method="post">
                         <input type="hidden" name="id" value="<?php echo $colheita->id ?>">
-                        <input type="submit" value="excluir" class="submitTableEX">
+                        <input type="submit" value="Excluir" class="submitTableEX">
                     </form>
                 </td>
             </tr>

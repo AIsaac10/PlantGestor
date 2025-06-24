@@ -28,12 +28,12 @@
         <div class="criarElemento">
             <a class="linkNav" href=""></a>
         </div>
-        <a class="linkNav" href="cultivo.php">cultivo</a>
-        <a class="linkNav" href="colheita.php">colheita</a>
-        <a class="linkNav" href="dashboard.php">dashboard</a>
+        <a class="linkNav" href="cultivo.php">Cultivo</a>
+        <a class="linkNav" href="colheita.php">Colheita</a>
+        <a class="linkNav" href="dashboard.php">Dashboard</a>
     </nav>
     <h1 class="h1Tipo">
-        dashboard
+        Dashboard
     </h1>
 </body>
 </html>

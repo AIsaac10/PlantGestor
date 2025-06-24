@@ -140,7 +140,20 @@ th {
 
 .submitTableEX:hover {
     cursor: pointer;
-    background-color: rgb(255, 72, 0);
+    background-color: rgb(207, 59, 0);
+}
+
+.submitTableCO {
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    background-color: rgb(65, 192, 86);
+
+}
+
+.submitTableCO:hover {
+    cursor: pointer;
+    background-color: rgb(68, 151, 82);
 }
 
 .p {

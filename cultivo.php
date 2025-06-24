@@ -26,15 +26,15 @@
     </header>
     <nav>
         <div class="criarElemento">
-            <a class="linkNav" href="criar-elemento-cultivo.php">criar elemento</a>
+            <a class="linkNav" href="criar-elemento-cultivo.php">Criar Elemento</a>
         </div>
-        <a class="linkNav" href="cultivo.php">cultivo</a>
-        <a class="linkNav" href="colheita.php">colheita</a>
-        <a class="linkNav" href="dashboard.php">dashboard</a>
+        <a class="linkNav" href="cultivo.php">Cultivo</a>
+        <a class="linkNav" href="colheita.php">Colheita</a>
+        <a class="linkNav" href="dashboard.php">Dashboard</a>
     </nav>
     <div class="h1">
         <h1 class="h1Tipo">
-            cultivo
+            Cultivo
         </h1>
     </div>
     <main>
@@ -53,12 +53,12 @@
     <table>
         <thead>
             <tr>
-                <th>ID do Cultivo</th>
                 <th>Tipo de Cultura</th>
                 <th>Data do Plantio</th>
                 <th>Quantidade de Plantio</th>
                 <th>Área de Cultura</th>
                 <th>Maneira de Plantio da Cultura</th>
+                <th></th>
                 <th></th>
                 <th></th>
             </tr>
@@ -67,12 +67,17 @@
             <?php 
                 while ($cultivo = $stmt->fetch(PDO::FETCH_OBJ)) { ?>
                 <tr>
-                    <td><?php echo $cultivo->id ?></td>
                     <td><?php echo $cultivo->tipoCultivo ?></td>
                     <td><?php echo $cultivo->dataCultivo ?></td>
                     <td><?php echo $cultivo->quantidadeCultivo ?></td>
                     <td><?php echo $cultivo->areaCultivo ?></td>
                     <td><?php echo $cultivo->maneiraCultivo ?></td>
+                    <td>
+                        <form action="criar-elemento-colheita.php" method="post">
+                            <input type="hidden" name="ic" value="<?php echo $cultivo->id ?>">
+                            <input type="submit" value="Criar Colheita" class="submitTableCO">
+                        </form>
+                    </td>
                     <td>
                         <form action="update-cultivo-form.php" method="post">
                             <input type="hidden" name="id" value="<?php echo $cultivo->id ?>">
@@ -81,15 +86,18 @@
                             <input type="hidden" name="qc" value="<?php echo $cultivo->quantidadeCultivo ?>">
                             <input type="hidden" name="ac" value="<?php echo $cultivo->areaCultivo ?>">
                             <input type="hidden" name="mc" value="<?php echo $cultivo->maneiraCultivo ?>">
-                            <input type="submit" value="editar" class="submitTableED">
+                            <input type="submit" value="Editar" class="submitTableED">
                         </form>
+
                     </td>
+
                     <td>
                         <form action="delete-cultivo.php" method="post">
                             <input type="hidden" name="id" value="<?php echo $cultivo->id ?>">
-                            <input type="submit" value="excluir" class="submitTableEX">
+                            <input type="submit" value="Excluir" class="submitTableEX">
                         </form>
                     </td>
+                    
                 </tr>
             <?php } ?>
         </tbody>

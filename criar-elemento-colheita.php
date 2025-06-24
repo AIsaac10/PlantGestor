@@ -9,6 +9,7 @@
 <body>
     <?php
         require "lock.php";
+        $ic = $_POST["ic"];
     ?>
     <div class="box">
         <form action="create-colheita.php" method="POST">
@@ -18,8 +19,7 @@
             </legend>
                 <br><br>
                 <div class="inputBox">
-                    <label for="id" class="labelInput">id do cultivo</label>
-                    <input type="int" name="idCultivo" id="id" class="input" required>
+                    <input type="hidden" name="idCultivo" id="ic" value="<?php echo $ic ?>">
                 </div>
                 <br><br>
                 <div class="inputBox">
